@@ -1,0 +1,139 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sahna */
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    animation: skyCycle 30s infinite alternate;
+}
+
+/* Tun - Kun */
+@keyframes skyCycle {
+    0% {
+        background: linear-gradient(#081a3a, #102b5c); /* tun */
+    }
+    50% {
+        background: linear-gradient(#87CEEB, #E0F6FF); /* kunduz */
+    }
+    100% {
+        background: linear-gradient(#ff9966, #2b1055); /* shom */
+    }
+}
+
+/* Quyosh (yarimga tushadi) */
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #FFD700, #FF8C00);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sunMove 30s infinite alternate;
+}
+
+@keyframes sunMove {
+    0% {
+        top: 65%;
+        opacity: 0;
+    }
+    50% {
+        top: 15%;
+        opacity: 1;
+    }
+    100% {
+        top: 50%; /* faqat yarimga tushadi */
+        opacity: 1;
+    }
+}
+
+/* Bulutlar */
+.cloud {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.85;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 50%;
+    top: -22px;
+}
+
+.cloud::before {
+    left: 8px;
+}
+
+.cloud::after {
+    right: 8px;
+}
+
+/* Juda sekin va to‘xtamasdan */
+.c1 {
+    top: 22%;
+    animation: cloudMove 80s linear infinite;
+}
+
+.c2 {
+    top: 32%;
+    animation: cloudMove 90s linear infinite;
+}
+
+.c3 {
+    top: 42%;
+    animation: cloudMove 100s linear infinite;
+}
+
+@keyframes cloudMove {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 110%;
+    }
+}
+
+/* Tog‘lar (yanada mayda) */
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+}
+
+.m1 {
+    border-bottom: 120px solid #2f3b22;
+    left: 12%;
+}
+
+.m2 {
+    border-bottom: 150px solid #1e2817;
+    left: 40%;
+}
+
+.m3 {
+    border-bottom: 110px solid #3a4a2a;
+    left: 65%;
+}
